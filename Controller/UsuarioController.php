@@ -5,10 +5,9 @@
     include_once('DAO/UsuarioDAO.php');
 
     class UsuarioController{
-        private $secretKey = "1234";
+        private $secretKey = "123";
 
-        public function inserir($request, $response, $args)
-        {
+        public function inserir($request, $response, $args) {
             $var = $request->getParsedBody();
             $usuario = new Usuario(0, $var['nome'], $var['login'], $var['senha']);
         
@@ -18,8 +17,65 @@
             return $response->withJson($usuario,201);
         }
 
-        public function autenticar($request, $response, $args)
-        {
+        public function listar($request, $response, $args) {
+            $dao = new UsuarioDAO;    
+            $usuario =  $dao->listar();
+                    
+            $response = $response->withJson($usuario);
+            $response = $response->withStatus(200);
+            $response = $response->withHeader('Content-type', 'application/json');
+            return $response;   
+       
+        }
+
+        public function buscarPorId($request, $response, $args) {
+            $id = $args['id'];
+            
+            $dao = new UsuarioDAO;    
+            $usuario = $dao->buscarPorId($id);
+            $response = $response->withJson($usuario);
+            $response = $response->withStatus(200);
+            $response = $response->withHeader('Content-type', 'application/json');   
+            
+            return $response;
+        }
+
+        public function buscarPorLogin($request, $response, $args) {
+            $id = $args['login'];
+            
+            $dao = new UsuarioDAO;    
+            $usuario = $dao->buscarPorId($login);
+            $response = $response->withJson($usuario);
+            $response = $response->withStatus(200);
+            $response = $response->withHeader('Content-type', 'application/json');   
+            
+            return $response;
+        }
+
+        public function deletar($request, $response, $args) {
+            $id = $args['id'];
+    
+            $dao = new UsuarioDAO;
+            $usuario = $dao->deletar($id);
+        
+            $response = $response->withJson($usuario);
+            $response = $response->withHeader('Content-type', 'application/json');
+            return $response;  
+        }
+
+        public function atualizar($request, $response, $args) {
+            $id = $args['id'];
+            $var = $request->getParsedBody();
+            $usuario = new Usuario(0, $var['nome'], $var['login'], $var['senha']);
+        
+            $dao = new UsuarioDAO;
+            $produto = $dao->atualizar($usuario);
+        
+            return $response->withJson($usuario);    
+        }
+    
+
+        public function autenticar($request, $response, $args) {
             $user = $request->getParsedBody();
             
             $dao= new UsuarioDAO;    
