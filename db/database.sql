@@ -6,3 +6,10 @@ CREATE TABLE produto (
 
 );
 
+create table usuario (
+    id serial NOT NULL PRIMARY KEY,
+    nome character varying(30) NOT NULL,
+    login character varying(30) NOT NULL,
+    senha character varying(30) NOT NULL
+);
+
