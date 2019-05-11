@@ -50,13 +50,12 @@
     		$comando->execute();
             $usuarios=array();	
 		    while($row = $comando->fetch(PDO::FETCH_OBJ)){
-			    $usuarios[] = new Usuarios($row->id,$row->nome,$row->login,$row->senha);
+			    $usuarios[] = new Usuario($row->id,$row->nome,$row->login,$row->senha);
             }
             return $usuarios;
         }
 
-        public function buscarPorId($id)
-        {
+        public function buscarPorId($id) {
  		    $query = 'SELECT * FROM usuario WHERE id=:id';		
             $pdo = PDOFactory::getConexao(); 
 		    $comando = $pdo->prepare($query);
@@ -66,8 +65,7 @@
 		    return new Usuario($result->id,$result->nome,$result->login,$result->senha);           
         }
 
-        public function buscarPorLogin($login)
-        {
+        public function buscarPorLogin($login) {
  		    $query = 'SELECT * FROM usuario WHERE login=:login';		
             $pdo = PDOFactory::getConexao(); 
 		    $comando = $pdo->prepare($query);

@@ -5,7 +5,7 @@
 	/* ORGANIZANDO ARQUIVOS */
 	//include_once('ProdutoController.php');
 	include_once('Controller/ProdutoController.php');
-	include_once('UsuarioController.php');
+	include_once('Controller/UsuarioController.php');
 	include_once('DAO/ProdutoDAO.php');
 	include_once('DAO/UsuarioDAO.php');
 	include_once('Models/Produto.php');
@@ -23,10 +23,13 @@
 		$app->put('/{id}','ProdutoController:atualizar');
 		$app->delete('/{id}', 'ProdutoController:deletar');
 	})->add('UsuarioController:validarToken');
-
-	$app->post('/usuarios','UsuarioController:inserir');
-	
-	$app->post('/auth','UsuarioController:autenticar');
+		$app->post('/usuarios','UsuarioController:inserir');
+		$app->get('/usuarios','UsuarioController:listar');
+		$app->get('/usuarios/{id}','UsuarioController:buscarPorId'); 
+		$app->get('/usuarios/{login}','UsuarioController:buscarPorLogin');    
+		$app->put('/usuarios/{id}','UsuarioController:atualizar');
+		$app->delete('/usuarios/{id}', 'UsuarioController:deletar');
+		$app->post('/auth','UsuarioController:autenticar');
 	
 	$app->run();
 	?>
