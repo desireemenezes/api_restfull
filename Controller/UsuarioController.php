@@ -40,18 +40,6 @@
             return $response;
         }
 
-        public function buscarPorLogin($request, $response, $args) {
-            $id = $args['login'];
-            
-            $dao = new UsuarioDAO;    
-            $usuario = $dao->buscarPorId($login);
-            $response = $response->withJson($usuario);
-            $response = $response->withStatus(200);
-            $response = $response->withHeader('Content-type', 'application/json');   
-            
-            return $response;
-        }
-
         public function deletar($request, $response, $args) {
             $id = $args['id'];
     
