@@ -10,6 +10,7 @@
            /* tentamos primeiro conectar, criamos a conexão PDO com a base de dados 
            isset retorna true caso a variavel tenha sido inicializada */
            try {
+          
 
                if(!isset($pdo)) {
                     $pdo = new PDO('pgsql:host=localhost;dbname=brecho_01;user=postgres;password=postgresql');
@@ -22,9 +23,7 @@
             return $pdo;
 
            } catch (PDOException $e) {
-         
-            // Mata o script
-            die("Database connection failed: ". $e->getMessage() . "<br/>");
+              die("Database connection failed: ". $e->getMessage());
         }
             
     }

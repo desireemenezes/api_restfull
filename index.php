@@ -17,26 +17,26 @@
 	require './vendor/autoload.php';
 	$app = new \Slim\App;
 
-	//cria um grupo para setar na url os metodos
-	$app->group('/produtos', function() use ($app) {	
-		$app->get('','ProdutoController:listar');
-		$app->post('','ProdutoController:inserir');
-		$app->get('/{id}','ProdutoController:buscarPorId');    
-		$app->put('/{id}','ProdutoController:atualizar');
-		$app->delete('/{id}', 'ProdutoController:deletar');
-	})->add('UsuarioController:validarToken');
-		$app->post('/usuarios','UsuarioController:inserir');
-		$app->get('/usuarios','UsuarioController:listar');
-		$app->get('/usuarios/{id}','UsuarioController:buscarPorId');    
-		$app->put('/usuarios/{id}','UsuarioController:atualizar');
-		$app->delete('/usuarios/{id}', 'UsuarioController:deletar');
-		$app->post('/auth','UsuarioController:autenticar');
-		$app->post('/itemsacola','ItemSacolaController:inserir');
-		$app->get('/itemsacola','ItemSacolaController:listar');
-		$app->get('/itemsacola/{id}','ItemSacolaController:buscarPorId'); 
-		$app->put('/itemsacola/{id}','ItemSacolaController:atualizar');
-		$app->delete('/itemsacola/{id}', 'ItemSacolaController:deletar');
-		
+//cria um grupo para setar na url os metodos
+
+$app->group('/produtos', function() use ($app) {	
+	$app->get('','ProdutoController:listar');
+	$app->post('','ProdutoController:inserir');
+	$app->get('/{id}','ProdutoController:buscarPorId');    
+	$app->put('/{id}','ProdutoController:atualizar');
+	$app->delete('/{id}', 'ProdutoController:deletar');
+}); //->add('UsuarioController:validarToken');
+	$app->post('/usuarios','UsuarioController:inserir');
+	$app->get('/usuarios','UsuarioController:listar');
+	$app->get('/usuarios/{id}','UsuarioController:buscarPorId');    
+	$app->put('/usuarios/{id}','UsuarioController:atualizar');
+	$app->delete('/usuarios/{id}', 'UsuarioController:deletar');
+	//$app->post('/auth','UsuarioController:autenticar');
+	$app->post('/itemsacola','ItemSacolaController:inserir');
+	$app->get('/itemsacola','ItemSacolaController:listar');
+	$app->get('/itemsacola/{id}','ItemSacolaController:buscarPorId'); 
+	$app->put('/itemsacola/{id}','ItemSacolaController:atualizar');
+	$app->delete('/itemsacola/{id}', 'ItemSacolaController:deletar');
 	
-	$app->run();
-	?>
+$app->run();
+?>

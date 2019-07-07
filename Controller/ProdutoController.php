@@ -36,7 +36,7 @@ class ProdutoController {
     //POST Produtos
     public function inserir( $request, $response, $args) {
         $p = $request->getParsedBody();
-        $produto = new Produto(0,$p['nome'],$p['preco'],$p['descricao']);
+        $produto = new Produto(0,$p['nome'],$p['descricao'],$p['preco']);
     
         $dao = new ProdutoDAO;
         $produto = $dao->inserir($produto);
@@ -44,11 +44,12 @@ class ProdutoController {
         return $response->withJson($produto,201);    
     }
     
+    
     //PUT Produtos :id
     public function atualizar($request, $response, $args) {
         $id = $args['id'];
         $p = $request->getParsedBody();
-        $produto = new Produto($id, $p['nome'], $p['preco'],$p['descricao']);
+        $produto = new Produto($id, $p['nome'], $p['descricao'],$p['preco']);
     
         $dao = new ProdutoDAO;
         $produto = $dao->atualizar($produto);
