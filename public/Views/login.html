@@ -19,12 +19,12 @@
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="../css/carousel.css" rel="stylesheet">
   </head>
   <body>
     <header>
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-                <h2 class="my-0 mr-md-auto font-weight-normal"><strong class="black">TaPra</strong><strong class="red">Brick</strong><img src="img/sale.jpg" class="icon"></h2> 
+                <h2 class="my-0 mr-md-auto font-weight-normal"><strong class="black">TaPra</strong><strong class="red">Brick</strong><img src="../img/sale.jpg" class="icon"></h2> 
            
           </div>
       <div class="container">
@@ -52,10 +52,10 @@
                 <form action="" method="">
                     <h2 class="text-center">Login</h2>       
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Username" required="required">
+                        <input type="text" class="form-control" placeholder="Login" id="login" required="required">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password" required="required">
+                        <input type="password" class="form-control" placeholder="Senha" id="senha" required="required">
                     </div>
                     <div class="form-group">
                       <p><a class="btn btn-primary" href="pag-usuario.html" role="button">Login</a></p>
@@ -63,10 +63,9 @@
                    
                     <div class="clearfix">
                         <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-                        <a href="#" class="pull-right">Forgot Password?</a>
                     </div>        
                 </form>
-                    <p class="text-center"><a href="crud-usuario.html">Create an Account</a></p>
+                    <p class="text-center"><a href="cadastro_usuario.html">Create an Account</a></p>
                 </div>
             </div>
           
@@ -80,51 +79,13 @@
 
         <hr class="featurette-divider">
 
-   <!--  <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">  
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-          </div>
-          <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-          </div>
-        </div>
-
-        <hr class="featurette-divider">--> 
-
-        <!-- /END THE FEATURETTES -->
-
       </div><!-- /.container -->
 
 
       <!-- FOOTER -->
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2019 Company, Inc. </p>
       </footer>
     </main>
 
@@ -138,4 +99,7 @@
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="../../assets/js/vendor/holder.min.js"></script>
   </body>
+   <script src="../js/entidade/Produto.js"></script>
+    <script src="../js/controller/produtoController.js"></script>
+    <script src="../js/app.js"></script>
 </html>

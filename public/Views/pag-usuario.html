@@ -19,13 +19,13 @@
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <link href="../css/carousel.css" rel="stylesheet">
   </head>
   <body>
 
     <header>
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 border-bottom shadow-sm" style="background-color: #e9ebee; color:  #343a40;">
-            <h2 class="my-0 mr-md-auto font-weight-normal"><strong class="black">TaPra</strong><strong class="red">Brick</strong><img src="img/sale.jpg" class="icon"></h2> 
+            <h2 class="my-0 mr-md-auto font-weight-normal"><strong class="black">TaPra</strong><strong class="red">Brick</strong><img src="../img/sale.jpg" class="icon"></h2> 
              <!-- <i class="fa fa-shopping-cart"  data-toggle="modal" data-target="#exampleModal" style="font-size:36px"></i>-->
             <a class="btn btn" href="index.html">Logout</a>
           </div>
@@ -42,13 +42,13 @@
         <div class="col-lg-2" style="background-color: #e9ebee; color:  #343a40;">
           <ul class="navbar-nav mr-auto">
             <li style="text-align: center";>
-                <img class="rounded-circle img-responsive" src="img/avatar.png" Generic placeholder="image" width="60" height="60"><br/> 
+                <img class="rounded-circle img-responsive" src="../img/avatar.png" Generic placeholder="image" width="60" height="60"><br/> 
                 <b>Bem vindo(a):</b><br/>
-                <span id="nome_usuario"></span>
+                <span id="#nome_usuario"></span>
                 <hr>
             </li>
             <li class="nav-item active">
-              <a href="#" data-toggle="modal" data-target="#ModalLongoExemplo">Cadastrar produto</a><hr>
+              <a href="#" data-toggle="modal" data-target="#ModalCadastrarProduto">Cadastrar produto</a><hr>
             </li>
             <li class="nav-item active">
             <a href="#">Configurações</a> <hr>
@@ -60,8 +60,7 @@
             </ul>
         </div>
 
-           <!-- Modal -->
-    <div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+            <div class="modal fade" id="ModalCadastrarProduto" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
     
@@ -77,27 +76,30 @@
     
                     <form id="formprodutos">
                         <div class="form-row">
-    
+                              
+                            <input type="text" id="id" name="id" style="visibility: hidden">
+                            
                             <div class="col-md-12 mb-12" style="padding-bottom: 20px;">
-                                <label for="">Titulo</label>
-                                <input type="text" class="form-control" id="nome" placeholder="" required>
-                            </div><br>
-                            <div class="col-md-12 mb-12" style="padding-bottom: 20px;">
-                                <label for="">Descrição do Produto:</label>
-                                <textarea type="text" class="form-control" id="descricao" required></textarea>
-                            </div><br>
-                            <div class="col-md-12 mb-12" style="padding-bottom: 20px;">
-                                <label for="">Valor R$:</label>
-                                <input type="text" class="form-control" id="preco" value="" required>
+                                <input type="file" id="foto" name="foto">
                             </div>
                             <div class="col-md-12 mb-12" style="padding-bottom: 20px;">
-                                <input type="file" id="foto" name="filename2">
+                                <label for="nome">Titulo</label>
+                                <input type="text" class="form-control"name="nome" id="nome" placeholder="" required>
+                            </div><br>
+                            <div class="col-md-12 mb-12" style="padding-bottom: 20px;">
+                                <label for="preco">Valor R$:</label>
+                                <input type="text" class="form-control" name="preco" id="preco"  required>
                             </div>
+                            <div class="col-md-12 mb-12" style="padding-bottom: 20px;">
+                                <label for="descricao">Descrição do Produto:</label>
+                                <textarea type="text" class="form-control" name="descricao" id="descricao" required></textarea>
+                            </div><br>    
+                           
     
                         </div>
                         <div class="modal-footer">
                             <button type="reset" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button type="submit" class="btn btn-primary " id="btn-salvar">Salvar</button>
+                            <button type="submit" class="btn btn-primary"  onclick="window.location.href='pag-usuario.html';">Salvar</button>
                         </div>
                     </form>
                     </div>
@@ -106,27 +108,15 @@
              </div>
             </div>
         </div>
+
+
         
         <div class="col-lg-10" style="margin-top: 20px;">
-            <div class="form-row">
+         
 
-            <div class="container" style="padding-bottom: 50px;">
-               <a class="navbar-brand" href="#"></a>
-                        
-                <h5>O que você procura?</h5>
-                    <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <form class="form-inline mt-2 mt-md-0">
-                            <input class="form-control mr-sm-2 col-sm-8" type="text" placeholder='Ex: "Vestido"' aria-label="Search">
-                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Procurar</button>
-                        </form>
-                    </li>
-                    </ul>
-                </div>
-              
             <div class="row"id="corpo"></div>
          
-          </div>
+       
       
         </div><!-- /.row -->
 
@@ -139,7 +129,7 @@
       <hr>
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2019 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2019 Company, Inc.</p>
       </footer>
     </main>
 
@@ -153,5 +143,6 @@
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="../../assets/js/vendor/holder.min.js"></script>
   </body>
-  <script type="text/javascript" src="js/produtos.js"></script>
-</html>
+  <script src="../js/entidade/Produto.js"></script>
+  <script src="../js/controller/ProdutoController.js"></script>
+  <script src="../js/app.js"></script>
