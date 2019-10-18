@@ -74,5 +74,16 @@
 		    $result = $comando->fetch(PDO::FETCH_OBJ);
 		    return new Usuario($result->id,$result->nome,$result->login,$result->senha);           
         }
+
+        public function validarLogin($login) {
+          $query = 'SELECT * FROM usuario WHERE login=:login AND senha=:senha';		
+           $pdo = PDOFactory::getConexao(); 
+           $comando = $pdo->prepare($query);
+           $comando->bindParam ('login', $login);
+           $comando->bindParam ('senha', $senha);
+           $comando->execute();
+           $result = $comando->fetch(PDO::FETCH_OBJ);
+           return new Usuario($result->id,$result->nome,$result->login,$result->senha);  
     }
+}
 ?>

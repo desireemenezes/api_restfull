@@ -36,11 +36,11 @@ class ProdutoController {
     //POST Produtos
     public function inserir( $request, $response, $args) {
         $p = $request->getParsedBody();
-        $produto = new Produto(0,$p['nome'],$p['descricao'],$p['preco']);
+        $produto = new Produto(0,$p['foto'],$p['nome'],$p['preco'],$p['descricao']);
     
         $dao = new ProdutoDAO;
         $produto = $dao->inserir($produto);
-    
+        $response = $response->withHeader('Content-type', 'application/json');  
         return $response->withJson($produto,201);    
     }
     
@@ -49,13 +49,17 @@ class ProdutoController {
     public function atualizar($request, $response, $args) {
         $id = $args['id'];
         $p = $request->getParsedBody();
-        $produto = new Produto($id, $p['nome'], $p['descricao'],$p['preco']);
-    
+        $produto = new Produto($id, $p['foto'],$p['nome'],$p['preco'],$p['descricao']);
         $dao = new ProdutoDAO;
         $produto = $dao->atualizar($produto);
+
+        $response = $response->withJson($produto);
+        $response = $response->withStatus(200);
+        $response = $response->withHeader('Content-type', 'application/json');  
     
-        return $response->withJson($produto);    
+        return $response;    
     }
+
 
     //DELETE Produtos :id
     public function deletar($request, $response, $args) {

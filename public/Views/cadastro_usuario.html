@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="icon" href="../../../../favicon.ico">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <title>TaPraBrick</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/carousel.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <h2 class="my-0 mr-md-auto font-weight-normal"><strong class="black">TaPra</strong><strong class="red">Brick</strong><img src="../img/sale.jpg" class="icon"></h2> 
+           
+          </div>
+      <div class="container">
+        
+      </div>
+    </header>
+
+    <main role="main">
+
+   
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+                
+                <form id="formusuario">
+                    <div class="form-row">
+                        <div class="col-md-12 mb-12">CADASTRO CLIENTE:</div><br>
+                          <div class="col-md-12 mb-12">
+                              <label for="nome_usuario">Nome completo:</label>
+                              <input type="text" class="form-control" id="nome_usuario" placeholder="" >
+                          </div>
+                          <div class="col-md-6 mb-6">
+                          <label for="usuario">Usuário:</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="">@</span>
+                              </div>
+                              <input type="text" class="form-control" id="usuario" placeholder=""  >
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label for="senha">Senha:</label>
+                            <input type="text" class="form-control" id="senha" placeholder="" >
+                        </div>
+                       
+                        </div><br/>
+                        <div class="form-group">
+                          <div class="form-check">
+                            <input class="form-check-input is-invalid" type="checkbox" value="" id="">
+                            <label class="form-check-label" for="invalidCheck3">
+                              Concordo com os termos e condições
+                            </label>
+                            <div class="invalid-feedback">
+                              Você deve concordar, antes de continuar.
+                            </div>
+                          </div>
+                        </div>
+                        <input type="submit" id="btnsalvar" onclick="window.location.href='login.html';" value="Salvar"  class="btn btn-primary" >
+                      
+                      </form>
+        </div><!-- /.row -->
+
+        <div class="row"id="body"></div> 
+
+
+       
+
+        <hr class="featurette-divider">
+
+           <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+
+      <!-- FOOTER -->
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2019 Company, Inc. </p>
+      </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+  </body>
+  <script src="../js/entidade/Usuario.js"></script>
+  <script src="../js/controller/UsuarioController.js"></script>
+  <script src="../js/usuario.js"></script>
+</html>

@@ -24,19 +24,24 @@ $app->group('/produtos', function() use ($app) {
 	$app->post('','ProdutoController:inserir');
 	$app->get('/{id}','ProdutoController:buscarPorId');    
 	$app->put('/{id}','ProdutoController:atualizar');
-	$app->delete('/{id}', 'ProdutoController:deletar');
-}); //->add('UsuarioController:validarToken');
+	$app->delete('/{id}','ProdutoController:deletar');
+});
+
+/*->add('UsuarioController:validarToken');
 	$app->post('/usuarios','UsuarioController:inserir');
 	$app->get('/usuarios','UsuarioController:listar');
 	$app->get('/usuarios/{id}','UsuarioController:buscarPorId');    
 	$app->put('/usuarios/{id}','UsuarioController:atualizar');
 	$app->delete('/usuarios/{id}', 'UsuarioController:deletar');
+	//$app->get('/usuarios/{id}', 'UsuarioController:buscarPorLogin');
+	//$app->get('/usuarios/{id}', 'UsuarioController:validarLogin');
 	//$app->post('/auth','UsuarioController:autenticar');
 	$app->post('/itemsacola','ItemSacolaController:inserir');
 	$app->get('/itemsacola','ItemSacolaController:listar');
 	$app->get('/itemsacola/{id}','ItemSacolaController:buscarPorId'); 
 	$app->put('/itemsacola/{id}','ItemSacolaController:atualizar');
 	$app->delete('/itemsacola/{id}', 'ItemSacolaController:deletar');
+	*/
 	
 $app->run();
 ?>
